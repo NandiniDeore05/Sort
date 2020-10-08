@@ -66,6 +66,32 @@ void SelectionSort(int a[],int n)
     }
 }
 
+void ShellSort(int a[],int n)
+{
+    int step;
+    int temp;
+    int i,j;
+    for(step=n/2;step>0;step=step/2)
+    {
+        for(i=step;i<n;i++)                  
+        {
+            temp=a[i];
+            for(j=i-step;j>=0;j=j-step)
+            {
+                if(a[j]>temp)
+                {
+                    a[j+step]=a[j];
+                }
+                else
+                {
+                    break;
+                }
+            }
+         a[j+step]=temp;
+        }
+    }
+}
+
 int main()
 {
     int a[100];
@@ -78,7 +104,7 @@ int main()
         cin>>a[i];
     }
 
-    SelectionSort(a,n);
+    ShellSort(a,n);
     cout<<"THE SORTED LIST IS ===>"<<endl;
     for(int i=0;i<n;i++)
     {
