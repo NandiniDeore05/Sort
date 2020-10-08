@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 void BubbleSort(int a[],int n)
 {
     int flag;
@@ -23,6 +24,7 @@ void BubbleSort(int a[],int n)
         }
     }
 }
+
 void InsertionSort(int a[],int n)
 {
     int i,j;
@@ -30,7 +32,7 @@ void InsertionSort(int a[],int n)
     for(i=1;i<n;i++)
     {
         temp=a[i];
-        for(j=i-1;j>=0;j--)        // ADHICHE SAGALE COMPARE KARTA
+        for(j=i-1;j>=0;j--)        
         {
             if(a[j]>temp)
             {
@@ -44,6 +46,26 @@ void InsertionSort(int a[],int n)
     }
     a[j+1]=temp;
 }
+
+void SelectionSort(int a[],int n)
+{
+    int i,j,k;
+    for(i=0;i<n-1;i++)
+    {
+        for(j=k=i;j<n;j++)
+        {
+            if(a[k]>a[j])
+            {
+                k=j;
+            }
+        }
+        int temp;
+        temp=a[i];
+        a[i]=a[k];
+        a[k]=temp;
+    }
+}
+
 int main()
 {
     int a[100];
@@ -56,7 +78,7 @@ int main()
         cin>>a[i];
     }
 
-    BubbleSort(a,n);
+    SelectionSort(a,n);
     cout<<"THE SORTED LIST IS ===>"<<endl;
     for(int i=0;i<n;i++)
     {
