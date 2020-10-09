@@ -92,6 +92,40 @@ void ShellSort(int a[],int n)
     }
 }
 
+int partition(int a[],int l,int h)
+{
+    int pivot=a[l];
+    int i=l,j=h;
+    do
+    {
+        do{i++;}while(a[i]<=pivot);
+        do{j--;}while(a[j]>pivot);
+        if(i<j)
+        {
+            int t;
+            t=a[i];
+            a[i]=a[j];
+            a[j]=t;
+        }
+    }while(i<j);
+    int temp;
+    temp=a[j];
+    a[j]=a[l];
+    a[l]=temp;
+
+    return j;
+}
+void QuickSort(int a[],int l,int h)
+{
+    int j;
+    if(l<h)
+    {
+        j=partition(a,l,h);
+        QuickSort(a,l,j);
+        QuickSort(a,j+1,h);
+    }
+}
+
 int main()
 {
     int a[100];
