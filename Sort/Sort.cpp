@@ -130,16 +130,95 @@ int main()
 {
     int a[100];
     int n;
-    cout<<"ENTER TOTAL NUMBER OF ELEMENTS"<<endl;
-    cin>>n;
-    cout<<"NOW ENTER THE NUMBERS"<<endl;
-    for(int i=0;i<n;i++)
+    int select;
+    do
     {
-        cin>>a[i];
-    }
+        cout<<"WHICH SORT DO YOU WANT"<<endl;
+        cout<<"1. BUBBLE SORT"<<endl;
+        cout<<"2. INSERTION SORT"<<endl;
+        cout<<"3. SELECTION SORT"<<endl;
+        cout<<"4. QUICK SORT"<<endl;
+        cout<<"5. SHELL SORT"<<endl;
+        cout<<"6. EXIT"<<endl;
+        cout<<"CHOOSE OPTION"<<endl;
+        cin>>select;
+        switch (select)
+        {
+            case 1:
+            {
+                cout<<"ENTER TOTAL NUMBER OF ELEMENTS"<<endl;
+                cin>>n;
+                cout<<"NOW ENTER THE NUMBERS"<<endl;
+                for(int i=0;i<n;i++)
+                {
+                    cin>>a[i];
+                }
+                BubbleSort(a,n);
+                cout<<"THE SORTED LIST WITH BUBBLE SORT ===>"<<endl;
+                break;
+            }
+            case 2:
+            {
+                cout<<"ENTER TOTAL NUMBER OF ELEMENTS"<<endl;
+                cin>>n;
+                cout<<"NOW ENTER THE NUMBERS"<<endl;
+                for(int i=0;i<n;i++)
+                {
+                    cin>>a[i];
+                }
+                InsertionSort(a,n);
+                cout<<"THE SORTED LIST WITH INSERTION SORT ===>"<<endl;
+                break;
+            }
+            case 3:
+            {
+                cout<<"ENTER TOTAL NUMBER OF ELEMENTS"<<endl;
+                cin>>n;
+                cout<<"NOW ENTER THE NUMBERS"<<endl;
+                for(int i=0;i<n;i++)
+                {
+                    cin>>a[i];
+                }
+                SelectionSort(a,n);
+                cout<<"THE SORTED LIST WITH SELECTION SORT ===>"<<endl;
+                break;
+            }
+            case 4:
+            {
+                cout<<"ENTER TOTAL NUMBER OF ELEMENTS"<<endl;
+                cin>>n;
+                cout<<"NOW ENTER THE NUMBERS"<<endl;
+                for(int i=0;i<n;i++)
+                {
+                    cin>>a[i];
+                }
+                int h=n+1;
+                a[h]=INT32_MAX;
+                QuickSort(a,0,h);
+                cout<<"THE SORTED LIST WITH QUICK SORT ===>"<<endl;
+                break;
+            }
+            case 5:
+            {
+                cout<<"ENTER TOTAL NUMBER OF ELEMENTS"<<endl;
+                cin>>n;
+                cout<<"NOW ENTER THE NUMBERS"<<endl;
+                for(int i=0;i<n;i++)
+                {
+                    cin>>a[i];
+                }
+                ShellSort(a,n);
+                cout<<"THE SORTED LIST WITH SHELL SORT ===>"<<endl;
+                break;
+            }            
+            default:
+            {
+                cout<<"INVALID INPUT"<<endl;
+                break;
+            }
+        }
+    }while(select != 6);
 
-    ShellSort(a,n);
-    cout<<"THE SORTED LIST IS ===>"<<endl;
     for(int i=0;i<n;i++)
     {
         cout<<a[i]<<endl;
